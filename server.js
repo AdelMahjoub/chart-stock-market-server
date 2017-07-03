@@ -14,6 +14,7 @@ const server       = http.createServer(app);                       // http serve
 const io           = require('socket.io')(server);                 // https://socket.io/docs/
 const requestStock = require('./services/stock-request.service');
 const Stock        = require('./models/stock.model');
+const updateDocs   = require('./services/update-stored-stocks.service');
 
 /**
  * Setup
@@ -50,15 +51,15 @@ server.listen(app.get('port'), () => {
 /**
  * SocketIo
  */
+let docsUpdated = [];
+let updatedCount = 0;
 io.on('connection', socket => {
-  
-  // Emit all stored stocks on user first connection
-  Stock.find((err, res) => {
-    if(!err && res) {
-      io.emit('user connected', res);
-    }
+  console.log('user connected');
+    
+  updateDocs(socket, updatedCount, res => {
+    socket.emit('user connected', res);
   });
-
+ 
   // User request a new stock
   socket.on('add stock', symbol => {
     // Get request to Alpha Vantage api

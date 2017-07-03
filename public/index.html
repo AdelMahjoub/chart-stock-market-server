@@ -7,8 +7,43 @@
 
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <style>
+  .spinner {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height:60px;
+    width:60px;
+    margin:0px auto;
+    -webkit-animation: rotation .6s infinite linear;
+    -moz-animation: rotation .6s infinite linear;
+    -o-animation: rotation .6s infinite linear;
+    animation: rotation .6s infinite linear;
+    border-left:6px solid rgba(0,174,239,.15);
+    border-right:6px solid rgba(0,174,239,.15);
+    border-bottom:6px solid rgba(0,174,239,.15);
+    border-top:6px solid rgba(0,174,239,.8);
+    border-radius:100%;
+  }
+  @-webkit-keyframes rotation {
+    from {-webkit-transform: rotate(0deg);}
+    to {-webkit-transform: rotate(359deg);}
+  }
+  @-moz-keyframes rotation {
+    from {-moz-transform: rotate(0deg);}
+    to {-moz-transform: rotate(359deg);}
+  }
+  @-o-keyframes rotation {
+    from {-o-transform: rotate(0deg);}
+    to {-o-transform: rotate(359deg);}
+  }
+  @keyframes rotation {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(359deg);}
+  }
+  </style>
 <link href="styles.dbc1ed82d1256c62cfc3.bundle.css" rel="stylesheet"/></head>
 <body>
-  <app-root></app-root>
-<script type="text/javascript" src="inline.bedfe3e82fe50265e982.bundle.js"></script><script type="text/javascript" src="polyfills.6f2e533073f41d3f18ae.bundle.js"></script><script type="text/javascript" src="vendor.ab983e92086b31caf12d.bundle.js"></script><script type="text/javascript" src="main.a4bf1d36d4753630eaec.bundle.js"></script></body>
+  <app-root><div class="spinner"></div></app-root>
+<script type="text/javascript" src="inline.07f12787bb2bfbf6a21f.bundle.js"></script><script type="text/javascript" src="polyfills.6f2e533073f41d3f18ae.bundle.js"></script><script type="text/javascript" src="vendor.ab983e92086b31caf12d.bundle.js"></script><script type="text/javascript" src="main.095b4d481046187c8520.bundle.js"></script></body>
 </html>
