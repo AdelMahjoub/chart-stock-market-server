@@ -51,10 +51,8 @@ server.listen(app.get('port'), () => {
 /**
  * SocketIo
  */
-let docsUpdated = [];
 let updatedCount = 0;
 io.on('connection', socket => {
-  console.log('user connected');
     
   updateDocs(socket, updatedCount, res => {
     socket.emit('user connected', res);

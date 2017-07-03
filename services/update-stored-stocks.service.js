@@ -32,7 +32,7 @@ const updateDocs = function(socket, updatedCount, callback) {
             let d = new Date(b.moment).getTime();
             return c - d;
           });
-          Stock.findOneAndUpdate({_id: res[updatedCount]._id}, {$set: {series: newSeries}}, (err, raw) => {
+          Stock.findOneAndUpdate({_id: res[updatedCount]._id}, {$set: {series: seriesList}}, (err, raw) => {
             updatedCount++;
             socket.emit('updated', updatedCount);
             return updateDocs(socket, updatedCount, callback);
