@@ -6,7 +6,6 @@ const requestStock = function(symbol, callback) {
   const searchQuery = querystring.stringify({
     function: 'TIME_SERIES_MONTHLY',
     symbol: symbol,
-    //interval: '60min',
     apikey: process.env.ALPHA_VANTAGE_KEY
   });
 
